@@ -1,37 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Baumans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
 
 :root {
   --white: hsl(0, 0%, 100%);
   --magenta: hsl(4, 61%, 48%);
 }
 
+/* Global */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: var(--magenta);
+  font-weight: 700;
+  display: block;
+}
+
+/* Main Content Styling */
 main {
-  font-family: "Baumans", sans-serif;
+  font-family: 'Baumans', sans-serif;
   font-size: 1.25rem;
 }
 
-a {
-  text-decoration: none;
-  color: hsl(4, 65%, 38%);
-  font-weight: 700;
-}
-
-li {
-  list-style: none;
-}
-
+/* Header Styling */
 header {
+  /* position: fixed;
+  width: 100%; */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: hsl(4, 61%, 48%);
   background-color: hsl(0, 0%, 100%);
   padding: 2rem 1rem;
 }
@@ -47,15 +48,104 @@ header {
 
 header nav ul {
   display: flex;
-  column-gap: 1rem;
-  /* margin-left: 15rem; */
+  column-gap: 2rem;
 }
 
+header li {
+  list-style: none;
+  color: var(--magenta);
+  font-weight: 700;
+}
+
+/* Services dropdown styling */
+.our-services {
+  position: relative;
+}
+
+.our-services-contents {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--magenta);
+  display: none;
+  flex-direction: column;
+  row-gap: 1rem;
+  z-index: 100;
+  padding: 1rem;
+  width: max-content;
+  border-radius: 10px;
+}
+
+.our-services-contents a {
+  color: var(--white);
+  width: fit-content;
+}
+
+.our-services-contents a:hover {
+  border-bottom: 2px solid var(--white);
+}
+
+.our-services:hover .our-services-contents {
+  display: flex;
+}
+
+.our-services:hover .chevron {
+  transform: rotateX(180deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.chevron {
+  transition: all 0.5s ease-in-out;
+}
+/* Service dropdown styling ends */
+
+/* Socials icons and links styling */
 header .socials {
   display: flex;
   column-gap: 1.5rem;
 }
 
+header .socials > div {
+  transition: transform 0.3s ease;
+}
+
+header .socials > div:hover {
+  transform: translateY(-10px) scale(1.5);
+}
+
+.linkedin:hover {
+  color: hsl(201, 100%, 35%);
+}
+
+.skype:hover {
+  color: hsl(196, 100%, 47%);
+}
+
+.facebook:hover {
+  background: linear-gradient(
+    to bottom,
+    hsl(201, 100%, 55%),
+    hsl(214, 100%, 44%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* hsl(201, 100%, 55%)  hsl(214, 100%, 44%)*/
+}
+
+.instagram:hover {
+  background: linear-gradient(
+    45deg,
+    hsl(28, 93%, 60%),
+    hsl(328, 71%, 51%),
+    hsl(275, 54%, 45%),
+    hsl(234, 61%, 58%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Socials icons and links styling ends */
+
+/* Slider Styling */
 .services-slider {
   display: flex;
   flex-direction: column;
@@ -68,7 +158,7 @@ header .socials {
 }
 
 .inspection-slide {
-  background-image: url("img/pexels_cottonbro.jpg");
+  background-image: url('img/pexels_cottonbro.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -76,7 +166,7 @@ header .socials {
 }
 
 .printing-slide {
-  background-image: url("img/pexels-jakubzerdzicki.jpg");
+  background-image: url('img/pexels-jakubzerdzicki.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -84,7 +174,7 @@ header .socials {
 }
 
 .cad-slide {
-  background-image: url("img/pexels-thisisengineering.jpg");
+  background-image: url('img/pexels-thisisengineering.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -92,7 +182,7 @@ header .socials {
 }
 
 .eng-slide {
-  background-image: url("img/pexels-rdne.jpg");
+  background-image: url('img/pexels-rdne.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -100,7 +190,7 @@ header .socials {
 }
 
 .data-slide {
-  background-image: url("img/pexels-pavel-danilyuk.jpg");
+  background-image: url('img/pexels-pavel-danilyuk.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -135,6 +225,7 @@ header .socials {
   background-color: var(--white);
   color: var(--magenta);
 }
+/* Slider Styling Ends*/
 
 section.services {
   display: flex;
@@ -193,11 +284,118 @@ section.services > div {
   color: var(--white);
 }
 
+.closing-section li {
+  list-style: none;
+}
+
 .closing-section a {
   display: block;
   color: var(--white);
 }
 
-footer {
-  /* margin-top: 20rem; */
+/* Machine Part Inspection Page Styling */
+/* Intro Section */
+section.intro {
+  text-align: center;
+  background-color: var(--magenta);
+  color: var(--white);
+  padding: 1.5rem 3rem;
+}
+
+section.intro h1 {
+  font-size: 48px;
+  font-weight: 900;
+}
+
+section.intro p {
+  margin-top: 4rem;
+}
+
+/* Methods of Inspection Section */
+.methods {
+  background: url('img/2148522095.jpg') center / cover no-repeat fixed;
+  padding: 5rem 0;
+  color: black;
+}
+
+.methods h2,
+.procedures h2,
+.benefits h2 {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.method-lists-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 15rem;
+}
+
+.method-list {
+  font-size: 28px;
+  color: black;
+  align-self: center;
+}
+
+/* .method-list:nth-child(odd) {
+  align-self: start;
+}
+
+.method-list:nth-child(even) {
+  align-self: end;
+} */
+/* Methods of Inspection Section Ends */
+
+/* Inspection Procedures */
+.procedures {
+  margin-top: 3rem;
+}
+.procedures > p {
+  text-align: center;
+  font-size: 24px;
+  padding: 0 10rem;
+  margin-bottom: 3rem;
+}
+
+.inspections {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.inspections > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.inspections img {
+  display: block;
+  width: 100%;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 5rem 0 1rem;
+}
+
+.details h3 {
+  font-size: 40px;
+}
+
+.inspections > div:nth-child(even) .details {
+  order: 2;
+  margin-left: 2rem;
+}
+
+.benefits {
+  background-color: var(--magenta);
+}
+
+.benefits {
+  padding: 3rem 0;
+  color: var(--white);
 }
